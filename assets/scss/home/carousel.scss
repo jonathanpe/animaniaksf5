@@ -1,0 +1,17 @@
+
+.awssld {
+  width : 180rem;
+  height: 100%;
+  --slider-height-percentage : 60rem;
+  .awssld__bullets{
+    bottom: 0;
+    z-index: 2;
+    margin-bottom: 1rem;
+  }
+  .awssld__bullets--active{
+    transform: initial;
+  }
+  .awssld__content{
+    background-color : white;
+  }
+}

@@ -1,0 +1,19 @@
+@import "../others/windows.scss";
+
+#auth-container{
+display: flex;
+  justify-content: center;
+  align-items: center;
+  .window{
+    width : 50rem;
+  }
+}
+
+#auth__subscribe{
+  .label-header {
+    background-color: #fdf991;
+  }
+  .bottom-bordered--large, .bottom-bordered--thin {
+    border-bottom-color: #f6f334;
+  }
+}

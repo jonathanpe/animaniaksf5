@@ -1,0 +1,50 @@
+#footer{
+  height: 40rem;
+  background-color: #fd6969;
+  #footer__garanties{
+    background-color: #fcfa6b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7rem;
+    ul{
+      display: flex;
+      font-weight: bold;
+
+      li{
+        display: flex;
+        justify-content: center;
+      }
+      li:not(:last-child){
+        border-right : .1rem solid #fd6969;
+      }
+      li::before{
+        color:#fd6969;
+        margin-right : .8rem;
+        font-family: "Font Awesome 5 Pro";
+        font-size: 3rem;
+      }
+      #footer__garanties__official-products::before{
+        content:'\f0a3';
+      }
+      #footer__garanties__fast-delivery::before{
+        content:'\f48b';
+      }
+      #footer__garanties__sercure-payment::before{
+        content:'\f2f7';
+      }
+      #footer__garanties__responsive-customer-service::before{
+        content:'\f82d';
+      }
+      li{
+        display: flex;
+        align-items: center;
+        width: 30rem;
+        text-transform: uppercase;
+        i{
+          font-size : 3rem;
+        }
+      }
+    }
+  }
+}

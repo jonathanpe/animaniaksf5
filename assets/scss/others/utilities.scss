@@ -1,0 +1,3 @@
+@function calcPercentPerItem( $itemQty ){
+  @return percentage( 1 / $itemQty );
+}

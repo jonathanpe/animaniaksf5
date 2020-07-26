@@ -1,0 +1,248 @@
+@import "../app.scss" ;
+
+header{
+  background-color: #fd6969;
+  #top-nav__container{
+    border-bottom: 1px solid #fc4646;
+    display: flex;
+    justify-content: center;
+    height : 6rem ;
+    #top-nav{
+      width: 80vw;
+      display: flex;
+      justify-content: flex-end;
+      #top-nav__menu{
+        display: flex;
+        #top-nav__infos{
+          font-size: .6rem;
+          color: white;
+          padding: .2rem;
+          li{
+            display: inline-block;
+            margin-right:.5rem;
+          }
+          li:after{
+            margin-left: .5rem;
+            content : '|'
+          }
+        }
+      }
+    }
+
+  }
+
+    #main-panel{
+      height: 7rem;
+      display: flex;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: inherit;
+      z-index: 100;
+      &::after{
+        content:'';
+        position: absolute;
+        z-index: -1;
+        height: 1.5rem;
+        bottom: -1.5rem;
+        width: 100%;
+      }
+      #main-panel__search-bar{
+        display: flex;
+        align-items: center;
+        height: 70%;
+        flex-grow: 1;
+        position: relative;
+        border-radius: .5rem;
+        border: 2px solid white;
+        overflow: hidden;
+        box-sizing: border-box;
+        input{
+          height: 100%;
+          flex-grow: 1;
+        }
+        button{
+          background-color: #fcfa6b;
+          width: 5rem;
+          height: 100%;
+          i{
+            color : #656561 ;
+          }
+        }
+      }
+      #top-nav__my-account{
+        color: #fc4646;
+        font-size: 1.3rem;
+        background-color: white;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 1.5rem;
+        margin: 0 1.5rem;
+        position: relative;
+        display: flex;
+        a{
+          display: flex;
+          align-items: center;
+          #top-nav__my-account__icon{
+            background-color: #fc4646 ;
+            overflow: hidden;
+            border-radius: 4rem;
+            width: 5rem;
+            height: 5rem;
+            display: flex;
+            justify-content: center;
+            i{
+              font-size: 3.7rem;
+              position: relative;
+              top: 1.6rem;
+              color: #f9e371;
+            }
+          }
+          #top-nav__my-account__infos__wrapper{
+            display: flex;
+            margin: 0 .5rem;
+            #top-nav__my-account_unwrap-nav{
+              i{
+                font-weight: bold;
+              }
+            }
+            #top-nav__my-account__infos{
+              display: flex;
+              flex-direction: column;
+              #top-nav__my-account__infos__id{
+                font-weight: bold;
+              }
+              #top-nav__my-account__infos__points{
+                margin-top: .3rem;
+              }
+            }
+          }
+        }
+        #top-nav__my-account__nav{
+          display: none;
+          box-sizing: border-box;
+          position: absolute;
+          left: 0;
+          width: 100%;
+          background-color: white;
+          padding: .5rem;
+        }
+      }
+      #main-panel__quick-actions-menu{
+        display: flex;
+        height: 80%;
+        button{
+          @include glint ;
+          width : 15rem;
+          position: relative;
+          border: .2rem solid #fc4646;
+          margin-right: 1.5rem;
+          overflow: hidden;
+          border-radius: .5rem;
+          text-transform: uppercase;
+          span{
+            position: relative;
+            z-index: 1;
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+          }
+          span::before{
+            margin: 0 1.5rem;
+            font-size: 1.8rem;
+          }
+        }
+
+        #main-panel__quick-actions-menu__cart:before{
+          background-color: #fd6969;
+        }
+        #main-panel__quick-actions-menu__connect:before{
+          background-color: white;
+        }
+        #main-panel__quick-actions-menu__connect{
+          background-color : #f6f334 ;
+          border-radius: 2.5rem 0.5rem .5rem 2.5rem ;
+
+          color: #fc4646;
+          span:before{
+            font-family: "Font Awesome 5 Pro";
+            content: '\f007';
+
+          }
+        }
+        #main-panel__quick-actions-menu__cart{
+          background-color : #fc4646 ;
+          color:white;
+          span:before{
+            font-family: "Font Awesome 5 Pro";
+            content: '\f07a';
+          }
+        }
+
+      }
+      #main-panel__logo{
+        width : 40rem;
+        display: flex;
+        justify-content: center;
+        img{
+          max-width: 12rem;
+        }
+      }
+    }
+  }
+  #main-nav{
+    margin-top: 7rem;
+    background-color: #fc4646;
+    height: 6rem;
+    display: flex;
+    text-transform: uppercase;
+    color : white;
+    font-weight: lighter;
+    font-size: .8rem;
+    border-bottom: .3rem solid #f6f334;
+    ul{
+      padding-left: 40rem;
+      box-sizing: border-box;
+      a{
+        color:white;
+        position: relative;
+        height : 100%;
+        display: inline-flex;
+        font-size : 1.2rem ;
+        li.active--banana-bumble{
+          box-shadow: 0 -0.2rem 0 #fefde1;
+          border-radius: .5rem .5rem 0 0;
+          overflow: hidden;
+          color : #fc4646;
+          font-weight: bold;
+        }
+        li{
+          font-family: "Roboto Condensed";
+          width : 15rem;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+
+        }
+      }
+      a:before,
+      a:last-of-type:after
+      {
+        content: '';
+        width: .2rem;
+        border-left: .2rem solid #fd6969;
+        border-right: .2rem solid #fd6969;
+        height: 100%;
+        background-color: #fc4646;
+      }
+      a:before{
+        left: 0;
+      }
+      a:last-of-type:after{
+        right : 0;
+      }
+    }
+  }
+

@@ -1,0 +1,224 @@
+body{
+    background-color: red;
+}
+
+@import './others/reset.scss' ;
+@font-face {
+    font-family: "Montserrat Regular";
+    src: url("/fonts/Montserrat/Montserrat-Regular.ttf");
+}
+@font-face {
+    font-family: "Roboto Regular";
+    src: url("/fonts/Roboto/Roboto-Regular.ttf");
+}
+@font-face {
+    font-family: "Roboto Condensed";
+    src: url("/fonts/Roboto/Roboto-Condensed.ttf");
+}
+
+@font-face {
+    font-family: "Lemon Milk";
+    src: url("/fonts/Lemonmilk/LEMONMILK-Regular.otf");
+}
+body {
+    font-size: 1.5rem;
+  //  background-color: #f8f8f8;
+    background-color: white;
+    width : 100vw ;
+    font-family: "Montserrat Regular";
+    color : #797979;
+}
+
+button{
+     font-family: "Roboto Condensed" ;
+}
+h2{
+    display: inline-block;
+}
+
+
+h2.heading-title{
+
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: "Roboto Condensed";
+    color: #fd6969;
+    background-color: white ;
+    font-size: 2rem;
+    &::after{
+        content: '';
+        height: 3.5rem;
+        display: block;
+        position: absolute;
+        margin-top: .5rem;
+        width: 9.5rem;
+        border-left: .5rem solid #f6f334;
+        border-top: .5rem solid #f6f334;
+    }
+}
+html{
+    font-size: 65%;
+    overflow-x: hidden;
+}
+@mixin bottom-bordered( $size ){
+
+    border-bottom-width : $size ;
+}
+@mixin bordered( $direction, $size ){
+    @if $direction == 'bottom' {
+        border-#{$direction}-style: solid;
+        border-#{$direction}-width: #{$size}rem;
+    };
+
+}
+@mixin glint{
+    position: relative;
+    z-index: 9;
+    &:before
+
+    {
+        content: '';
+        display: flex;
+        position : absolute;
+        width: 100%;
+        top : 0;
+        left : 0;
+    }
+
+    &:before{
+        z-index: -1;
+        height: 50%;
+    }
+
+}
+@mixin label{
+    text-transform: uppercase;
+    padding: 1rem 0;
+    font-size: 1.3rem;
+    text-align: center;
+    margin: 1rem ;
+    width: 13rem;
+}
+
+@mixin basic-label{
+    text-align: center;
+    height : 5rem;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 1.2rem ;
+    color: #757575;
+    font-weight: bold;
+    Font-family : "Roboto Condensed" ;
+}
+$banana : #fefde1 ;
+$bumblebee : #f6f334 ;
+$lemon : #fcfa6b ;
+$antracite : #303030 ;
+
+.container{
+    min-height: 100rem;
+}
+.btn--classic--black{
+    width: 100%;
+    background-color: white;
+    border : .1rem solid black;
+    text-transform: uppercase;
+}
+.bottom-bordered--large{
+    @include bordered('bottom',.8) ;
+}
+.bottom-bordered--thin{
+    @include bordered('bottom',.1) ;
+}
+
+.label-header{
+    height: 6rem;
+}
+
+
+.form__field{
+
+    span.label-container{
+        height: 2rem;
+        display: block;
+    }
+}
+.form__field{
+    display: flex;
+    align-items: center;
+}
+.form__field.floating-label{
+    position: relative;
+    margin-top: 3rem;
+
+    input{
+        &:focus + label{
+            transform: translateY(-2rem) translateX( 0 );
+            height: 2rem;
+            font-size: 1rem;
+        }
+        &:valid{
+            background-color: inherit;
+        }
+        box-sizing: border-box;
+        padding-left:5%;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-color: #f8f8f8;
+    }
+    label.floating-label{
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        transition: .1s;
+        transform: translateY(0) translateX( 5% );
+        top : 0;
+        position: absolute;
+        height: 100%;
+        z-index: 0;
+        width : 100%;
+        display: flex;
+        align-items: center;
+        pointer-events: none;
+    }
+}
+.active--banana-bumble{
+    @include glint;
+    background-color: $bumblebee;
+    &:before{
+        background-color: white;
+    }
+}
+
+.block{
+    background-color: white;
+    margin : 3rem 3rem 3rem ;
+}
+
+.rounded {
+    border-radius: .3rem;
+}
+.label--black{
+    @include label;
+    background-color: $antracite;
+    color: white;
+}
+
+.basic-label--lemon{
+    @include basic-label;
+    background-color: $lemon;
+}
+body::-webkit-scrollbar{
+    background-color: red;
+    width : .5rem;
+}
+body::-webkit-scrollbar-track
+{
+
+    background-color: #F5F5F5;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #fc4646;    /* color of the scroll thumb */
+    height: 5rem;
+}

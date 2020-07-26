@@ -1,0 +1,18 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('subscribe') }}
+{% endblock  %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('subscribe') }}
+{% endblock  %}
+
+
+{% block body %}
+    {{ react_component('Subscribe', {'props': { 'form' :  form } }) }}#}
+{% endblock %}
