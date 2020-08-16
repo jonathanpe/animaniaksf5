@@ -24,7 +24,7 @@ class Authenticator extends AbstractFormLoginAuthenticator implements PasswordAu
 {
     use TargetPathTrait;
 
-    public const LOGIN_ROUTE = 'app_login';
+    public const LOGIN_ROUTE = 'auth_login';
 
     private $entityManager;
     private $urlGenerator;
@@ -47,10 +47,13 @@ class Authenticator extends AbstractFormLoginAuthenticator implements PasswordAu
 
     public function getCredentials(Request $request)
     {
+
+      //  dd($request->request->get('login[_token]'));
+
         $credentials = [
-            'username' => $request->request->get('username'),
-            'password' => $request->request->get('password'),
-            'csrf_token' => $request->request->get('_csrf_token'),
+            'username' => $request->request->get('login')['userName'],
+            'password' => $request->request->get('login')['password'],
+            'csrf_token' => $request->request->get('login')['_token'],
         ];
         $request->getSession()->set(
             Security::LAST_USERNAME,
@@ -62,12 +65,17 @@ class Authenticator extends AbstractFormLoginAuthenticator implements PasswordAu
 
     public function getUser($credentials, UserProviderInterface $userProvider)
     {
-        $token = new CsrfToken('authenticate', $credentials['csrf_token']);
+
+
+        $token = new CsrfToken('login', $credentials['csrf_token']);
+
+
         if (!$this->csrfTokenManager->isTokenValid($token)) {
             throw new InvalidCsrfTokenException();
         }
 
-        $user = $this->entityManager->getRepository(User::class)->findOneBy(['username' => $credentials['username']]);
+        $user = $this->entityManager->getRepository(User::class)->findOneBy(['userName' => $credentials['username']]);
+
 
         if (!$user) {
             // fail authentication with a custom error
@@ -96,8 +104,8 @@ class Authenticator extends AbstractFormLoginAuthenticator implements PasswordAu
             return new RedirectResponse($targetPath);
         }
 
-        // For example : return new RedirectResponse($this->urlGenerator->generate('some_route'));
-        throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+         return new RedirectResponse($this->urlGenerator->generate('home_index'));
+      //  throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 
     protected function getLoginUrl()

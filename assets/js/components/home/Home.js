@@ -6,7 +6,12 @@ import HomeCarousel from "./HomeCarousel";
 import Footer from "../layout/footer/Footer";
 
 export default class Home extends React.Component {
+
+
     render() {
+
+        console.log( storedfdff )
+        debugger;
         return <div>
             <Header/>
                 <div id={"home-container"} className={"home container"}>

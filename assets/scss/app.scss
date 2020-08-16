@@ -153,14 +153,12 @@ $antracite : #303030 ;
     margin-top: 3rem;
 
     input{
-        &:focus + label{
+        &:focus + label, &:valid + label{
             transform: translateY(-2rem) translateX( 0 );
             height: 2rem;
             font-size: 1rem;
         }
-        &:valid{
-            background-color: inherit;
-        }
+
         box-sizing: border-box;
         padding-left:5%;
         position: relative;
@@ -168,7 +166,7 @@ $antracite : #303030 ;
         height: 100%;
         background-color: #f8f8f8;
     }
-    label.floating-label{
+    label{
         font-size: 1.5rem;
         text-transform: uppercase;
         transition: .1s;

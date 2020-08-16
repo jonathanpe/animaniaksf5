@@ -9,8 +9,6 @@ export default class CustomSlider extends AutoplaySlider {
 
     constructor(props) {
         super(props)
-        console.log(this)
-        debugger;
     }
 
     render() {

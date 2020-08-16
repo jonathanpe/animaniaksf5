@@ -14,5 +14,8 @@
 
 
 {% block body %}
-    {{ react_component('Subscribe', {'props': { 'form' :  form } }) }}#}
+    {{ react_component('Subscribe', {'props': { 'schema' : formSchema  } }) }}
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+        <p>test</p>
+    {{ form_end(form) }}
 {% endblock %}

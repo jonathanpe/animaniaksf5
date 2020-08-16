@@ -1,5 +1,6 @@
 {
     "devDependencies": {
+        "@babel/plugin-proposal-class-properties": "^7.10.4",
         "@babel/preset-react": "7.0.0",
         "@symfony/webpack-encore": "^0.30.0",
         "add": "^2.0.6",
@@ -21,10 +22,14 @@
     },
     "dependencies": {
         "liform-react": "^0.9.0",
+        "liform-react-final": "^1.0.0-2",
         "react": "^16.13.1",
         "react-awesome-slider": "^4.1.0",
         "react-dom": "^16.13.1",
         "react-on-rails": "^12.0.1",
+        "react-redux": "^7.2.1",
+        "react-symfony-form": "^0.0.1-alpha.10",
+        "redux": "^4.0.5",
         "webpack": "^4.43.0",
         "webpack-dev-server": "^3.11.0"
     }

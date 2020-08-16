@@ -1,4 +1,5 @@
 import React from "react";
+import Liform from "liform-react";
 
 export default class Window extends React.Component {
 
@@ -17,6 +18,7 @@ export default class Window extends React.Component {
             <div id={this.mainClassName + "__header"} className={"label-header bottom-bordered--large "}>
                 <h2>{this.title}</h2>
             </div>
+
             <div className={"window__main " + this.mainClassName + "__main"} id={this.mainClassName + "__main"}>
                 { this.windowContent }
             </div>

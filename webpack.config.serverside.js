@@ -7,6 +7,9 @@ Encore
     .setPublicPath("/")
     // empty the outputPath dir before each build
     .cleanupOutputBeforeBuild()
+    .configureBabel(function(babelConfig) {
+        babelConfig.plugins.push('@babel/plugin-proposal-class-properties');
+    })
     // enable react in babel
     .enableReactPreset()
     // so we don't need to deal with runtime.js
